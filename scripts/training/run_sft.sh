@@ -52,6 +52,7 @@ torchrun --nnodes 1 --nproc_per_node 1 run_clm_sft_with_peft.py \
     --trainable ${lora_trainable} \
     --lora_dropout ${lora_dropout} \
     --modules_to_save ${modules_to_save} \
+    --use_flash_attention_2 \
     --torch_dtype float16 \
     --validation_file ${validation_file} \
     --load_in_kbits 16 \
