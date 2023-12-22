@@ -29,6 +29,5 @@
     "normalized": true,
     "rstrip": false,
     "single_word": false
-  },
-  "use_fast": false
+  }
 }
