@@ -19,7 +19,7 @@ from typing import Iterable, List
 import subprocess
 import re
 
-DEFAULT_SYSTEM_PROMPT = """You are a helpful assistant. 你是一个乐于助人的助手。"""
+DEFAULT_SYSTEM_PROMPT = """You are a helpful assistant. あなたは助けを惜しまないアシスタントです。"""
 
 TEMPLATE_WITH_SYSTEM_PROMPT = (
     "[INST] <<SYS>>\n"
@@ -557,30 +557,30 @@ setup()
 
 # Create the Gradio interface
 with gr.Blocks() as demo:
-    github_banner_path = 'https://raw.githubusercontent.com/ymcui/Chinese-LLaMA-Alpaca-2/main/pics/banner.png'
-    gr.HTML(f'<p align="center"><a href="https://github.com/ymcui/Chinese-LLaMA-Alpaca-2"><img src={github_banner_path} width="700"/></a></p>')
+    github_banner_path = 'https://raw.githubusercontent.com/leonunix/Japanese-LLaMA2-Alpaca/main/pics/banner.png'
+    gr.HTML(f'<p align="center"><a href="https://github.com/leonunix/Japanese-LLaMA2-Alpaca"><img src={github_banner_path} width="700"/></a></p>')
     chatbot = gr.Chatbot()
     with gr.Row():
         with gr.Column(scale=4):
             with gr.Column(scale=3):
                 system_prompt_input = gr.Textbox(
                     show_label=True,
-                    label="系统提示语（仅在对话开始前或清空历史后修改有效，对话过程中修改无效）",
+                    label="システムプロンプト(会話中の変更は無効です)",
                     placeholder=DEFAULT_SYSTEM_PROMPT,
                     lines=1).style(
                     container=True)
                 negative_prompt_input = gr.Textbox(
                     show_label=True,
-                    label="反向提示语（仅在对话开始前或清空历史后修改有效，对话过程中修改无效）",
-                    placeholder="（可选，默认为空）",
+                    label="ネガティブプロンプト(会話中の変更は無効です)",
+                    placeholder="オプション、デフォルトではNULL",
                     lines=1,
                     visible=ENABLE_CFG_SAMPLING).style(
                     container=True)
             with gr.Column(scale=12):
                 user_input = gr.Textbox(
                     show_label=True,
-                    label="用户指令",
-                    placeholder="Shift + Enter发送消息...",
+                    label="コマンド",
+                    placeholder="Shift + Enterで送信",
                     lines=10).style(
                     container=True)
             with gr.Column(min_width=32, scale=1):

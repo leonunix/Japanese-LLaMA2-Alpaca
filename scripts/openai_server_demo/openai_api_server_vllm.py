@@ -84,10 +84,10 @@ def getConversation(name, system, roles, messages, offset, sep_style, sep, sep2=
             stop_token_ids=stop_token_ids
         )
 
-# Chinese LLaMA Alpaca default template
+# Japanese LLaMA Alpaca default template
 register_conv_template(
     getConversation(
-        name="chinese-llama-alpaca",
+        name="japanese-llama-alpaca",
         system="Below is an instruction that describes a task. Write a response that appropriately completes the request.\n\n",
         roles=("### Instruction:\n", "### Response:"),
         messages=(),
@@ -98,11 +98,11 @@ register_conv_template(
     )
 )
 
-# Chinese LLaMA Alpaca 2 default template
+# Japanese LLaMA Alpaca 2 default template
 register_conv_template(
     getConversation(
-        name="chinese-llama-alpaca-2",
-        system="[INST] <<SYS>>\nYou are a helpful assistant. 你是一个乐于助人的助手。\n<</SYS>>\n\n",
+        name="japanese-llama-alpaca-2",
+        system="[INST] <<SYS>>\nYou are a helpful assistant. あなたは助けを惜しまないアシスタントです。\n<</SYS>>\n\n",
         roles=("[INST]", "[/INST]"),
         messages=(),
         offset=0,
@@ -113,22 +113,22 @@ register_conv_template(
     )
 )
 
-class ChineseLLaMAAlpacaAdapter(BaseModelAdapter):
-    """The model adapter for Chinese-LLaMA-Alpaca"""
+class JapaneseLLaMAAlpacaAdapter(BaseModelAdapter):
+    """The model adapter for Japanese-LLaMA-Alpaca"""
 
     use_fast_tokenizer = False
 
     def match(self, model_path: str):
-        return "chinese-llama-alpaca" in model_path.lower()
+        return "japanese-llama-alpaca" in model_path.lower()
 
     def get_default_conv_template(self, model_path: str) -> Conversation:
-        return get_conv_template("chinese-llama-alpaca")
+        return get_conv_template("japanese-llama-alpaca")
 
-class ChineseLLaMAAlpaca2Adapter(BaseModelAdapter):
-    """The model adapter for Chinese-LLaMA-Alpaca-2"""
+class JapaneseLLaMAAlpaca2Adapter(BaseModelAdapter):
+    """The model adapter for Japanese-LLaMA-Alpaca-2"""
 
     def match(self, model_path: str):
-        return "chinese-llama-alpaca-2" in model_path.lower()
+        return "japanese-llama-alpaca-2" in model_path.lower()
 
     def load_model(self, model_path: str, from_pretrained_kwargs: dict):
         model, tokenizer = super().load_model(model_path, from_pretrained_kwargs)
@@ -137,12 +137,12 @@ class ChineseLLaMAAlpaca2Adapter(BaseModelAdapter):
         return model, tokenizer
 
     def get_default_conv_template(self, model_path: str) -> Conversation:
-        return get_conv_template("chinese-llama-alpaca-2")
+        return get_conv_template("japanese-llama-alpaca-2")
 
 
 # add model adapters to head of List model_adapters
-model_adapters = [ChineseLLaMAAlpacaAdapter()] + model_adapters
-model_adapters = [ChineseLLaMAAlpaca2Adapter()] + model_adapters
+model_adapters = [JapaneseLLaMAAlpacaAdapter()] + model_adapters
+model_adapters = [JapaneseLLaMAAlpaca2Adapter()] + model_adapters
 fastchat.model.model_adapter.model_adapters = model_adapters
 
 def create_error_response(status_code: HTTPStatus,

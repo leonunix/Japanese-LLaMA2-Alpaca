@@ -108,7 +108,7 @@ if device == torch.device("cpu"):
 
 model.eval()
 
-DEFAULT_SYSTEM_PROMPT = """You are a helpful assistant. 你是一个乐于助人的助手。"""
+DEFAULT_SYSTEM_PROMPT = """You are a helpful assistant. あなたは助けを惜しまないアシスタントです。"""
 
 TEMPLATE_WITH_SYSTEM_PROMPT = (
     "[INST] <<SYS>>\n" "{system_prompt}\n" "<</SYS>>\n\n" "{instruction} [/INST]"
@@ -217,7 +217,7 @@ def stream_predict(
     num_beams=4,
     repetition_penalty=1.0,
     do_sample=True,
-    model_id="chinese-llama-alpaca-2",
+    model_id="japanese-llama-alpaca-2",
     **kwargs,
 ):
     choice_data = ChatCompletionResponseStreamChoice(

@@ -18,20 +18,20 @@ from langchain.chains.summarize import load_summarize_chain
 
 prompt_template = (
     "[INST] <<SYS>>\n"
-    "You are a helpful assistant. 你是一个乐于助人的助手。\n"
+    "You are a helpful assistant. あなたは助けを惜しまないアシスタントです。\n"
     "<</SYS>>\n\n"
     "请为以下文字写一段摘要:\n{text} [/INST]"
 )
 refine_template = (
     "[INST] <<SYS>>\n"
-    "You are a helpful assistant. 你是一个乐于助人的助手。\n"
+    "You are a helpful assistant. あなたは助けを惜しまないアシスタントです。\n"
     "<</SYS>>\n\n"
-    "已有一段摘要：{existing_answer}\n"
-    "现在还有一些文字，（如果有需要）你可以根据它们完善现有的摘要。"
+    "既存の要約があります：{existing_answer}\n"
+    "今、いくつかのテキストがありますが、必要であればそれらに基づいて既存の要約を洗練させることができます。"
     "\n"
     "{text}\n"
     "\n"
-    "如果这段文字没有用，返回原来的摘要即可。请你生成一个最终的摘要。"
+    "もしこのテキストが役に立たない場合は、元の要約に戻してください。最終的な要約を生成してください。"
     " [/INST]"
 )
 

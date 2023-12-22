@@ -41,11 +41,11 @@ def main():
             # raise exception if model_type is not supported
             raise Exception(f"Model type {model_type} is not supported. Please choose one of the following: LlamaCpp, GPT4All")
 
-    # The followings are specifically designed for Chinese-Alpaca-2
+    # The followings are specifically designed for Japanese-Alpaca-2
     # For detailed usage: https://github.com/ymcui/Chinese-LLaMA-Alpaca-2/wiki/privategpt_en
     alpaca2_prompt_template = (
         "[INST] <<SYS>>\n"
-        "You are a helpful assistant. 你是一个乐于助人的助手。\n"
+        "You are a helpful assistant. あなたは助けを惜しまないアシスタントです。\n"
         "<</SYS>>\n\n"
         "{context}\n\n{question} [/INST]"
     )

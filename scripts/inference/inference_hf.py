@@ -1,7 +1,7 @@
 import argparse
 import json, os
 
-DEFAULT_SYSTEM_PROMPT = """You are a helpful assistant. 你是一个乐于助人的助手。"""
+DEFAULT_SYSTEM_PROMPT = """You are a helpful assistant. あなたは助けを惜しまないアシスタントです。"""
 
 TEMPLATE = (
     "[INST] <<SYS>>\n"
@@ -213,8 +213,8 @@ if __name__ == '__main__':
             print("Start inference with instruction mode.")
 
             print('='*85)
-            print("+ 该模式下仅支持单轮问答，无多轮对话能力。\n"
-                  "+ 如要进行多轮对话，请使用llama.cpp或本项目中的gradio_demo.py。")
+            print("+ 该模式下仅支持单轮问答，无多轮对话能力。このモードは回答だけ使え、チャートモードじゃありません\n"
+                  "+ チャートモード使え場合はllama.cppあるいはgradio_demo.py使ってください。")
             print('-'*85)
             print("+ This mode only supports single-turn QA.\n"
                   "+ If you want to experience multi-turn dialogue, please use llama.cpp or gradio_demo.py.")

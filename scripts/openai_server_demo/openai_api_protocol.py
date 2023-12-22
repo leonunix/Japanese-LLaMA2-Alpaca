@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 
 class ChatCompletionRequest(BaseModel):
-    model: str = "chinese-llama-alpaca-2"
+    model: str = "japanese-llama-alpaca-2"
     messages: Union[str, List[Dict[str, str]]]
     temperature: Optional[float] = 0.2
     top_p: Optional[float] = 0.9
@@ -47,7 +47,7 @@ class ChatCompletionResponse(BaseModel):
     id: str = Field(default_factory=lambda: f"chatcmpl-{shortuuid.random()}")
     object: str = "chat.completion"
     created: int = Field(default_factory=lambda: int(time.time()))
-    model: str = "chinese-llama-alpaca-2"
+    model: str = "japanese-llama-alpaca-2"
     choices: List[
         Union[ChatCompletionResponseChoice, ChatCompletionResponseStreamChoice]
     ]
@@ -61,7 +61,7 @@ class EmbeddingsRequest(BaseModel):
 class EmbeddingsResponse(BaseModel):
     object: str = "list"
     data: List[Dict[str, Any]]
-    model: str = "chinese-llama-alpaca-2"
+    model: str = "japanese-llama-alpaca-2"
 
 
 class CompletionRequest(BaseModel):
@@ -90,5 +90,5 @@ class CompletionResponse(BaseModel):
     id: Optional[str] = Field(default_factory=lambda: f"cmpl-{shortuuid.random()}")
     object: Optional[str] = "text_completion"
     created: Optional[int] = Field(default_factory=lambda: int(time.time()))
-    model: Optional[str] = "chinese-llama-alpaca-2"
+    model: Optional[str] = "japanese-llama-alpaca-2"
     choices: List[CompletionResponseChoice]

@@ -23,33 +23,33 @@ from langchain.embeddings.huggingface import HuggingFaceEmbeddings
 
 prompt_template = (
     "[INST] <<SYS>>\n"
-    "You are a helpful assistant. 你是一个乐于助人的助手。\n"
+    "You are a helpful assistant. あなたは助けを惜しまないアシスタントです。\n"
     "<</SYS>>\n\n"
     "{context}\n{question} [/INST]"
 )
 
 refine_prompt_template = (
     "[INST] <<SYS>>\n"
-    "You are a helpful assistant. 你是一个乐于助人的助手。\n"
+    "You are a helpful assistant. あなたは助けを惜しまないアシスタントです。\n"
     "<</SYS>>\n\n"
-    "这是原始问题: {question}\n"
-    "已有的回答: {existing_answer}\n"
-    "现在还有一些文字，（如果有需要）你可以根据它们完善现有的回答。"
+    "これは元々の質問です: {question}\n"
+    "すでにある回答: {existing_answer}\n"
+    "ここにいくつかのテキストがありますが、必要に応じて既存の回答を充実させるためにこれらに基づいてください。"
     "\n\n"
     "{context_str}\n"
     "\n\n"
-    "请根据新的文段，进一步完善你的回答。"
+    "新しいテキストに基づいて、回答をさらに充実させてください。"
     " [/INST]"
 )
 
 initial_qa_template = (
     "[INST] <<SYS>>\n"
-    "You are a helpful assistant. 你是一个乐于助人的助手。\n"
+    "You are a helpful assistant. あなたは助けを惜しまないアシスタントです。\n"
     "<</SYS>>\n\n"
-    "以下为背景知识：\n"
+    "以下の文章は背景知識です：\n"
     "{context_str}"
     "\n"
-    "请根据以上背景知识, 回答这个问题：{question}。"
+    "上記の背景知識に基づいて、この質問に答えてください：{question}。"
     " [/INST]"
 )
 
