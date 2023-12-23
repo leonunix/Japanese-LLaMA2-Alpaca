@@ -80,12 +80,12 @@
 
 本プロジェクトのモデルは主に下記の量子化・推理・実装ツールをサポートしています。
 
-| ツール名                                                                        | 機能                                                  | CPU | GPU | 量子化 | GUI | API | vLLM | 16K | 投機的サンプリング | Tutorial   |
-| :------------------------------------------------------------------------------ | ----------------------------------------------------- | :-: | :-: | :----: | :-: | :-: | :--: | :-: | :----------------: | ---------- |
-| [**llama.cpp**](https://github.com/ggerganov/llama.cpp)                         | 豊富な量子化オプションと効率的なローカル推論          |  ✅  |  ✅  |   ✅    |  ❌  |  ✅  |  ❌   |  ✅  |         ✅          | [作成中]() |
-| [**OpenAI API Calls**](https://platform.openai.com/docs/api-reference)          | OpenAI APIに互換するサーバー実装                      |  ✅  |  ✅  |   ✅    |  ❌  |  ✅  |  ✅   |  ✅  |         ❌          | [作成中]() |
-| [**text-generation-webui**](https://github.com/oobabooga/text-generation-webui) | モデルをWeb UIとしてデプロイするツール                |  ✅  |  ✅  |   ✅    |  ✅  |  ✅  |  ❌   |  ✅  |         ❌          | [作成中]() |
-| [**LangChain**](https://github.com/hwchase17/langchain)                         | 二次開発に適したLLMアプリケーション開発フレームワーク |  ✅  |  ✅  |   ✅    |  ❌  |  ❌  |  ❌   |  ✅  |         ❌          | [作成中]() |
+| ツール名                                                                        | 機能                                                  | CPU | GPU | 量子化 | GUI | API | vLLM | 16K | 投機的サンプリング | チュートリアル |
+| :------------------------------------------------------------------------------ | ----------------------------------------------------- | :-: | :-: | :----: | :-: | :-: | :--: | :-: | :----------------: | -------------- |
+| [**llama.cpp**](https://github.com/ggerganov/llama.cpp)                         | 豊富な量子化オプションと効率的なローカル推論          |  ✅  |  ✅  |   ✅    |  ❌  |  ✅  |  ❌   |  ✅  |         ✅          | [作成中]()     |
+| [**OpenAI API Calls**](https://platform.openai.com/docs/api-reference)          | OpenAI APIに互換するサーバー実装                      |  ✅  |  ✅  |   ✅    |  ❌  |  ✅  |  ✅   |  ✅  |         ❌          | [作成中]()     |
+| [**text-generation-webui**](https://github.com/oobabooga/text-generation-webui) | モデルをWeb UIとしてデプロイするツール                |  ✅  |  ✅  |   ✅    |  ✅  |  ✅  |  ❌   |  ✅  |         ❌          | [作成中]()     |
+| [**LangChain**](https://github.com/hwchase17/langchain)                         | 二次開発に適したLLMアプリケーション開発フレームワーク |  ✅  |  ✅  |   ✅    |  ❌  |  ❌  |  ❌   |  ✅  |         ❌          | [作成中]()     |
 
 ## 事前学習とファインチューニング
 
