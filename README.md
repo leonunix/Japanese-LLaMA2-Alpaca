@@ -110,7 +110,7 @@
 - [FlashAttention-2 *by Dao-AILab*](https://github.com/Dao-AILab/flash-attention)
 - [Chinese-LLaMA-Alpaca-2 *by @ymcui*](https://github.com/ymcui/Chinese-LLaMA-Alpaca-2)
 
-本プロジェクトは「[**GMOインターネットグループ株式会社**](https://www.gmo.jp/)」が運営する「[**ConoHa VPS (with NVIDIA H100 GPU)**](https://www.conoha.jp/vps/gpu/)」上で開発及びテストを行いました。
+本プロジェクトは[**GMOインターネットグループ株式会社**](https://www.gmo.jp/)が運営する[**ConoHa VPS (with NVIDIA H100 GPU)**](https://www.conoha.jp/vps/gpu/)上で開発及びテストを行いました。
 
 ## 免責事項
 
