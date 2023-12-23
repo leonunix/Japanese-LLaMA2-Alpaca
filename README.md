@@ -9,7 +9,7 @@
 - ローカルCPU/GPUを利用したモデル実装
 - LLaMAエコシステムに対応：[🤗transformers](https://github.com/huggingface/transformers), [llama.cpp](https://github.com/ggerganov/llama.cpp), [text-generation-webui](https://github.com/oobabooga/text-generation-webui), [LangChain](https://github.com/hwchase17/langchain), [privateGPT](https://github.com/imartinez/privateGPT), [vLLM](https://github.com/vllm-project/vllm)
 
-#### 現在公開したモデル
+#### 配布中のモデル
 
 - 基盤モデル (foundation model)：Japanese-LLaMA-2-13B
 - 指示実行モデル (instruction-following model)：Japanese-Alpaca-2-13B
@@ -29,7 +29,7 @@
 | タイトル                                                          | 説明                                                                   |
 | ----------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | [💁🏻‍♂️概要](#概要)                                                  | 本プロジェクトの特徴                                                   |
-| [⏬ダウンロード](#ダウンロード)                                    | デモ公開したモデルのダウンロード                                       |
+| [⏬ダウンロード](#ダウンロード)                                    | 配布中のモデルのダウンロード                                       |
 | [💻推理と実装](#推理と実装)                                         | トレーニング後の量子化 (quantify)、ローカルCPU/GPUを利用したモデル実装 |
 | [📝事前学習とファインチューニング](#事前学習とファインチューニング) | 日本語LLaMA-2、Alpaca-2モデルのトレーニング                            |
 | [🙏謝辞](#謝辞)                                                     | 貢献した方々に感謝                                                     |
@@ -38,10 +38,10 @@
 
 本プロジェクトはLlama-2をベースに日本語LLaMA-2及びAlpaca-2モデルを公開しました。特徴として：
 
-#### 📖 大きい語彙サイズ
+#### 📖 大きいトークンサイズ
 
-- 大きい語彙サイズ（サイズ：60,105）を利用
-- また、LLaMAとAlpacaの語彙を統一し、混在使用による問題を回避
+- 大きいトークンサイズ（サイズ：60,105）を利用
+- また、LLaMAとAlpacaのトークンを統一し、混在使用による問題を回避
 
 #### ⚡ FlashAttention-2
 
@@ -63,7 +63,7 @@
 | トレーシングパート           |                          LoRA + emb/lm-head                          |                         LoRA + emb/lm-head                          |
 | ベースモデル                 | [公式オリジナル版Llama-2](https://github.com/facebookresearch/llama) |                          Japanese-LLaMA-2                           |
 | トレーニングデータ           |        ラベリングなしジェネラルデータ（11Gプレーンテキスト）         |                 ラベリングありデータ（100万セット）                 |
-| 語彙サイズ                   |                                60,105                                |                               60,105                                |
+| トークンサイズ               |                                60,105                                |                               60,105                                |
 | 文脈サイズ（最大拡張サイズ） |                            4K（12K-18K）                             |                            4K（12K-18K）                            |
 | 入力テンプレート             |                                 不要                                 |               Llama-2-Chatシリーズのテンプレート必要                |
 | 向いている利用シーン         |              文章の続き：文脈を基に続きのテキストを生成              | プロンプトの理解：Q&A、ライティング、チャット、インタラクションなど |
@@ -78,7 +78,14 @@
 
 ## 推理と実装
 
-現在ドキュメント作成中。
+本プロジェクトのモデルは主に下記の量子化・推理・実装ツールをサポートしています。
+
+| ツール名                                                                        | 機能                                                  | CPU | GPU | 量子化 | GUI | API | vLLM | 16K | 投機的サンプリング | Tutorial   |
+| :------------------------------------------------------------------------------ | ----------------------------------------------------- | :-: | :-: | :----: | :-: | :-: | :--: | :-: | :----------------: | ---------- |
+| [**llama.cpp**](https://github.com/ggerganov/llama.cpp)                         | 豊富な量子化オプションと効率的なローカル推論          |  ✅  |  ✅  |   ✅    |  ❌  |  ✅  |  ❌   |  ✅  |         ✅          | [作成中]() |
+| [**OpenAI API Calls**](https://platform.openai.com/docs/api-reference)          | OpenAI APIに互換するサーバー実装                      |  ✅  |  ✅  |   ✅    |  ❌  |  ✅  |  ✅   |  ✅  |         ❌          | [作成中]() |
+| [**text-generation-webui**](https://github.com/oobabooga/text-generation-webui) | モデルをWeb UIとしてデプロイするツール                |  ✅  |  ✅  |   ✅    |  ✅  |  ✅  |  ❌   |  ✅  |         ❌          | [作成中]() |
+| [**LangChain**](https://github.com/hwchase17/langchain)                         | 二次開発に適したLLMアプリケーション開発フレームワーク |  ✅  |  ✅  |   ✅    |  ❌  |  ❌  |  ❌   |  ✅  |         ❌          | [作成中]() |
 
 ## 事前学習とファインチューニング
 
@@ -96,12 +103,12 @@
 
 本プロジェクトは下記オープンソースプロジェクトをベースに二次開発を行いました。各プロジェクトに参加された方々に御礼申し上げます。
 
-- [Chinese-LLaMA-Alpaca-2 by *@ymcui*](https://github.com/ymcui/Chinese-LLaMA-Alpaca-2)
 - [Llama-2 *by Meta*](https://github.com/facebookresearch/llama)
 - [llama.cpp *by @ggerganov*](https://github.com/ggerganov/llama.cpp)
 - [FlashAttention-2 by *Dao-AILab*](https://github.com/Dao-AILab/flash-attention)
+- [Chinese-LLaMA-Alpaca-2 by *@ymcui*](https://github.com/ymcui/Chinese-LLaMA-Alpaca-2)
 
-本プロジェクトの開発は[**ConoHa VPS (with NVIDIA H100 GPU)**](https://www.conoha.jp/vps/gpu/)上で行いました。計算リソースを提供してくださった[**GMOインターネットグループ株式会社**](https://www.gmo.jp/)に御礼申し上げます。
+本プロジェクトは「[**GMOインターネットグループ株式会社**](https://www.gmo.jp/)」が運営する「[**ConoHa VPS (with NVIDIA H100 GPU)**](https://www.conoha.jp/vps/gpu/)」上で開発及びテストを行いました。
 
 ## 免責事項
 
@@ -109,9 +116,9 @@
 
 その他ソースコードを利用する際は、**それぞれのオープンソースライセンス規約**に従ってください。
 
-モデルを利用して生成されたコンテンツの正確性は、計算方法、ランダム要素、量子化精度の潜在的な劣化のために変動する可能性があります。ご了承ください。
+配布中のモデルを利用して生成されたコンテンツの正確性は、計算方法、ランダム要素、量子化精度の潜在的な劣化のために変動する可能性があります。ご了承ください。
 
-本プロジェクトは、モデルの出力の正確性に関して**いかなる保証も行いません**。本プロジェクトは、関連リソースの使用及びその結果に起因する**いかなる損失についても、責任を負うことはできません**。
+本プロジェクトは、モデルの出力の正確性に関して**いかなる保証も行いません**。関連リソースの使用及びその結果に起因する**いかなる損失についても、責任を負うことはできません**。
 
 本プロジェクトに関連するモデルが商業目的で使用される場合、開発者は**現地の法律と規制に従い、モデルを利用して生成されたコンテンツの合法性を保証する**義務があります。
 
