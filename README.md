@@ -105,8 +105,10 @@
 
 - [Llama-2 *by Meta*](https://github.com/facebookresearch/llama)
 - [llama.cpp *by @ggerganov*](https://github.com/ggerganov/llama.cpp)
-- [FlashAttention-2 by *Dao-AILab*](https://github.com/Dao-AILab/flash-attention)
-- [Chinese-LLaMA-Alpaca-2 by *@ymcui*](https://github.com/ymcui/Chinese-LLaMA-Alpaca-2)
+- [🤗transformers *by Hugging Face*](https://github.com/huggingface/transformers)
+- [Stanford Alpaca *by Tatsu Lab*](https://github.com/tatsu-lab/stanford_alpaca)
+- [FlashAttention-2 *by Dao-AILab*](https://github.com/Dao-AILab/flash-attention)
+- [Chinese-LLaMA-Alpaca-2 *by @ymcui*](https://github.com/ymcui/Chinese-LLaMA-Alpaca-2)
 
 本プロジェクトは「[**GMOインターネットグループ株式会社**](https://www.gmo.jp/)」が運営する「[**ConoHa VPS (with NVIDIA H100 GPU)**](https://www.conoha.jp/vps/gpu/)」上で開発及びテストを行いました。
 
