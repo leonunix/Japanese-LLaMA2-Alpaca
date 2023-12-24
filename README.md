@@ -7,7 +7,7 @@
 - Llama-2モデルをベースに日本語能力を拡張させ、日本語LLaMA-2及びAlpaca-2モデルを公開
 - 事前学習用スクリプト、ファインチューニング用スクリプトを公開。必要に応じてモデルの二次学習が可能
 - ローカルCPU/GPUを利用したモデル実装
-- LLaMAエコシステムに対応：[🤗transformers](https://github.com/huggingface/transformers), [llama.cpp](https://github.com/ggerganov/llama.cpp), [text-generation-webui](https://github.com/oobabooga/text-generation-webui), [LangChain](https://github.com/hwchase17/langchain), [privateGPT](https://github.com/imartinez/privateGPT), [vLLM](https://github.com/vllm-project/vllm)
+- LLaMAエコシステムに対応：[llama.cpp](https://github.com/ggerganov/llama.cpp), [text-generation-webui](https://github.com/oobabooga/text-generation-webui), [LangChain](https://github.com/hwchase17/langchain), [vLLM](https://github.com/vllm-project/vllm)
 
 #### 配布中のモデル
 
