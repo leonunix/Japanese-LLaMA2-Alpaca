@@ -82,7 +82,7 @@
 
 LoRAモデル（emb/lm-headを含む）単体のダウンロードURLです。**LoRAモデルはそのままで実装できず**、基盤モデルにマージしてフルモデルを作成してから実装する必要があります。
 
-| モデル                     |  モデルタイプ  |                      マージに必要の基盤モデル                      | ファイルサイズ |                       LoRAモデルダウンロード                       |
+| モデル                     |  モデルタイプ  |                     マージに必要のベースモデル                     | ファイルサイズ |                       LoRAモデルダウンロード                       |
 | :------------------------- | :------------: | :----------------------------------------------------------------: | :------------: | :----------------------------------------------------------------: |
 | Japanese-LLaMA-2-LoRA-13B  |   基盤モデル   | [Llama-2-13B-hf](https://huggingface.co/meta-llama/Llama-2-13b-hf) |    1.73 GB     | [[🤗HF]](https://huggingface.co/owner203/japanese-llama-2-lora-13b)  |
 | Japanese-Alpaca-2-LoRA-13B | 指示実行モデル |                        Japanese-LLaMA-2-13B                        |    1.73 GB     | [[🤗HF]](https://huggingface.co/owner203/japanese-alpaca-2-lora-13b) |
